@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20171126214345) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "todos", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "title"
     t.string "description"
     t.date "end_date"
@@ -48,4 +51,5 @@ ActiveRecord::Schema.define(version: 20171126214345) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "todos", "users"
 end
