@@ -26,6 +26,7 @@ class TodosController < ApplicationController
   # POST /todos.json
   def create
     @todo = Todo.new(todo_params)
+    @todo.user_id = current_user.id
 
     respond_to do |format|
       if @todo.save
@@ -70,6 +71,6 @@ class TodosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_params
-      params.fetch(:todo, {})
+      params.fetch(:todo, {}).permit(:title, :description)
     end
 end

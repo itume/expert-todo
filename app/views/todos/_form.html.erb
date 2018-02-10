@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+    <%= form.label :title, 'やること' %>
+    <%= form.text_field :title %>
+    <%= form.label :description, '詳細' %>
+    <%= form.text_field :description %>
   <div class="actions">
     <%= form.submit %>
   </div>
