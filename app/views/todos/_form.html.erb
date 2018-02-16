@@ -12,8 +12,10 @@
   <% end %>
     <%= form.label :title, 'やること' %>
     <%= form.text_field :title %>
-    <%= form.label :description, '詳細' %>
+    <%= form.label :description, '説明' %>
     <%= form.text_field :description %>
+    <%= form.label :expire_at, '期限日' %>
+    <%= form.text_field :expire_at %>
   <div class="actions">
     <%= form.submit %>
   </div>
