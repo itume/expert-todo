@@ -38,3 +38,7 @@
 <br>
 
 <%= link_to 'New Todo', new_todo_path %>
+<div id="todos">
+  <li v-for="todo in todos">{{title}}</li>
+</div>
+<%= javascript_pack_tag 'todo' %>
